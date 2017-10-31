@@ -26,6 +26,64 @@ body h1::first-letter
 font-family: LemonMilklight;
 font-size: 2em;
 }
+
+.row
+{
+text-align:center;
+min-width:100px;
+margin: 0 auto;
+}
+
+.far-left
+{
+  width:100px;
+  text-align:center;
+  display: inline-flex;
+  *display: inline;
+}
+
+.far-left button
+{
+  width:100px;
+  height:75px;
+background:url(../public/images/minus.png) no-repeat;
+border-style:none;
+}
+
+.left
+{
+  width:100px;
+  font-family: LemonMilklight;
+  font-size: 1.25em;
+  text-align:center;
+  display: inline-flex;
+  *display: inline;
+  color: #fff;
+}
+
+.right
+{
+  width:100px;
+  font-family: LemonMilklight;
+  font-size: 1.25em;
+  text-align:center;
+  display: inline-flex;
+  *display: inline;
+  color: #fff;
+}
+
+.far-right
+{
+  width:100px;
+  text-align:center;
+  display: inline-flex;
+  *display: inline;
+
+}
+
+.col-far-left
+{
+}
 </style>
   <title>Oracle Mark</title>
   <script type="text/javascript" src="../public/js/marks.js" async></script>
@@ -34,6 +92,34 @@ font-size: 2em;
 <h1><span class="big-o">O</span>racle</h1>
 
 <section>
+  <div class="row">
+    <div class="far-left">
+    </div>
+    <div class="left">
+      Mark
+    </div>
+    <div class="right">
+      Weight
+    </div>
+    <div class="far-right">
+    </div>
+  </div>
+  <div class="row">
+    <div class="far-left">
+      <button>
+      </button>
+    </div>
+    <div class="left">
+      [  ]
+    </div>
+    <div class="right">
+      [  ]
+    </div>
+    <div class="far-right">
+      +
+    </div>
+  </div>
+  <div class="row">
 </section>
   
 </body>
