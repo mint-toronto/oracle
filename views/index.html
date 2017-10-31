@@ -1,34 +1,40 @@
 <html>
 <head>
+<style media="screen" type="text/css">
+@font-face
+{
+  font-family: LemonMilklight;
+  src: url(../public/fonts/LemonMilklight.otf);
+  font-weight:400;
+}
+
+body
+{
+  background-color: #3BCCC7;
+}
+
+body h1
+{
+font-family: LemonMilklight;
+color: #BBEDEB;
+letter-spacing:0.25em;
+padding: 2% 0% 0% 3%;
+}
+
+body h1::first-letter
+{
+font-family: LemonMilklight;
+font-size: 2em;
+}
+</style>
   <title>Oracle Mark</title>
   <script type="text/javascript" src="../public/js/marks.js" async></script>
 </head>
 <body>
-  <h1>(t|m)ORACLE</h1>
-  <form name="MarksForm" id="marks">
-    <h1>What are your marks so far?</h1>
-    <fieldset id="tts">
-      <legend>Term Tests</legend>
-      <div id="tts-inputs">
-	<label>
-	  Term Test:
-	  <input id="tt1" name="tt1" type="number" min="0" max="100" step="0.5" value="12.5">
-	</label>
-      </div>
-      <input id="add-tt" type="button" value="I wrote another term test bro">
-    </fieldset>
-    <fieldset>
-      <legend>Quizzes/Assignments</legend>
-      <div id="qas-inputs">
-	<label>
-	  Q/A:
-	  <input id="qa1" name="qa1" type="number" min="0" max="100" step="0.5" value="10.1">
-	</label>
-      </div>
-      <input id="add-qa" type="button" value="There's tons of these tho">
-    </fieldset>
-    <br>
-    <input id="submit-button" type="button" value="What's gonna transpire, O'Oracle Mark I ask thee">
-  </form>
+<h1><span class="big-o">O</span>racle</h1>
+
+<section>
+</section>
+  
 </body>
 </html>
