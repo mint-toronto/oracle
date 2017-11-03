@@ -1,6 +1,7 @@
 // HOOK UP ADD/REMOVE BUTTONS
 
 var formFieldCount = 1;
+var rowsDisplayed = [];
 var mainSection = document.getElementById('main-section');
 
 window.onload = function ()
@@ -66,18 +67,62 @@ function addRow()
     }
 
     divTable['far-right'].appendChild(addButton);
+    rowsDisplayed.push(divTable['row'])
 
     // Finally, set up click listeners
     addButton.addEventListener('click', addRow);
-    removeButton.addEventListener('click', removeRowFunction(rowName));
+    removeButton.addEventListener('click', removeRowFunction(divTable['row']));
     formFieldCount++;
 }
 
-function removeRowFunction(rowName)
+function removeRowFunction(row)
 {
     return function()
     {
-	rowToRemove = document.getElementById(rowName);
-	rowToRemove.parentElement.removeChild(rowToRemove);
+	index = rowsDisplayed.indexOf(row);
+	
+	// Do nothing if this is the last row left.
+	if (rowsDisplayed.length == 1)
+	{
+	    return;
+	}
+
+	// If we're removing the last row, we need to move the add button.
+	if (index == rowsDisplayed.length - 1)
+	{
+	    newLastRow = rowsDisplayed[rowsDisplayed.length - 2];
+	    farRightCol = firstChildByClass(newLastRow, 'far-right');
+	    
+	    oldAddButton = document.getElementById('add-button');
+	    oldAddParent = oldAddButton.parentElement;
+	    oldAddParent.removeChild(oldAddButton);
+
+	    addButton = document.createElement('button');
+	    addButton.setAttribute('type', 'button');
+	    addButton.setAttribute('id', 'add-button');
+	    addButton.addEventListener('click', addRow);
+
+	    farRightCol.appendChild(addButton);
+	}
+
+	// Clear row from list of displayed rows. 
+	if (index > -1)
+	{
+	    rowsDisplayed.splice(index, 1);
+	}
+	
+	row.parentElement.removeChild(row);
     };
+}
+
+function firstChildByClass(domElement, className)
+{
+    for (var i = 0; i < domElement.childNodes.length; i++)
+    {
+	childNode = domElement.childNodes[i];
+	if (childNode.className == className)
+	{
+	    return childNode;
+	}        
+    }
 }
