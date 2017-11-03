@@ -1,7 +1,5 @@
 // HOOK UP ADD/REMOVE BUTTONS
 
-document.getElementById('add-button').addEventListener('click', addRow);
-
 var formFieldCount = 1;
 var mainSection = document.getElementById('main-section');
 
@@ -37,6 +35,11 @@ function addRow()
     removeButton.setAttribute('type', 'button');
     removeButton.setAttribute('id', 'remove-button-' + formFieldCount.toString());
 
+    // Create add button
+    addButton = document.createElement('button');
+    addButton.setAttribute('type', 'button');
+    addButton.setAttribute('id', 'add-button');
+
     // Create the DOM sub-tree we're going to add. First the main row elements.
     for (var key in divTable)
     {
@@ -53,60 +56,14 @@ function addRow()
 
     document.getElementById('marks-form').appendChild(divTable['row']);
 
-    // Remove old add button
-    addButton = document.getElementById('add-button');
-    addButton.parentElement.removeChild(addButton);
-    
-    formFieldCount++;
-}
-
-function addQA()
-{
-    var br = document.createElement('br');
-    
-    var label = document.createElement('label');
-    label.textContent = "Q/A: "
-    
-    var input = document.createElement('input');
-    input.setAttribute('type', 'number');
-    input.setAttribute('min', '0');
-    input.setAttribute('max', '100');
-    input.setAttribute('step', '0.5');
-    input.setAttribute('value', '100.0');
-
-    label.appendChild(input);
-    qaInputGroup.appendChild(br);
-    qaInputGroup.appendChild(label);
-}
-
-
-// FORM SUBMISSON
-
-//document.querySelector('#submit-button').addEventListener('click', doSubmit);
-
-function doSubmit()
-{
-    var data    = getFormData();
-    var request = new XMLHttpRequest();
-    console.log(data);
-    request.open('POST', 'marks/submit', true);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-encoded; charset=UTF-8');
-    request.send(data);
-}
-
-function getFormData()
-{
-    var params = '';
-    
-    for( var i = 0; i < document.MarksForm.elements.length; i++ )
+    // Remove old add button and/or add new one
+    if (formFieldCount != 1)
     {
-	if (document.MarksForm.elements[i].type == 'number')
-	{
-	    var fieldName = document.MarksForm.elements[i].name;
-	    var fieldValue = document.MarksForm.elements[i].value;
-	    params += fieldName + '=' + fieldValue + '&';
-	}
+	oldAddButton = document.getElementById('add-button');
+	oldAddButton.parentElement.removeChild(oldAddButton);
     }
-    
-    return params.substring(0, params.length - 1);
+
+    divTable['far-right'].appendChild(addButton);
+    addButton.addEventListener('click', addRow);  
+    formFieldCount++;
 }
