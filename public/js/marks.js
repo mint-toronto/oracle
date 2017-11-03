@@ -11,34 +11,34 @@ window.onload = function ()
 
 function addRow()
 {
-    rowName = 'row-' + formFieldCount.toString();
-    divList = [ 'row', 'far-left', 'left', 'right', 'far-right' ];
-    divTable = {};
+    var rowName = 'row-' + formFieldCount.toString();
+    var divList = [ 'row', 'far-left', 'left', 'right', 'far-right' ];
+    var divTable = {};
 
     // Create all divs to add
-    for (i = 0; i < divList.length; i++)
+    for (var i = 0; i < divList.length; i++)
     {
-	divName = divList[i];
+	var divName = divList[i];
 	divTable[divName] = document.createElement('div');
 	divTable[divName].className = divName;
     }
     divTable['row'].id = rowName;
 
     // Create form fields to add
-    markField = document.createElement('input');
+    var markField = document.createElement('input');
     markField.setAttribute('type', 'text');
     markField.className = 'mark-box';
 
-    weightField = document.createElement('input');
+    var weightField = document.createElement('input');
     weightField.setAttribute('type', 'text');
     weightField.className = 'mark-box';
 
     // Create remove button
-    removeButton = document.createElement('button');
+    var removeButton = document.createElement('button');
     removeButton.setAttribute('type', 'button');
 
     // Create add button
-    addButton = document.createElement('button');
+    var addButton = document.createElement('button');
     addButton.setAttribute('type', 'button');
     addButton.setAttribute('id', 'add-button');
 
@@ -61,8 +61,8 @@ function addRow()
     // Remove old add button and/or add new one
     if (formFieldCount != 1)
     {
-	oldAddButton = document.getElementById('add-button');
-	oldAddParent = oldAddButton.parentElement;
+	var oldAddButton = document.getElementById('add-button');
+	var oldAddParent = oldAddButton.parentElement;
 	oldAddParent.removeChild(oldAddButton);
     }
 
@@ -79,7 +79,7 @@ function removeRowFunction(row)
 {
     return function()
     {
-	index = rowsDisplayed.indexOf(row);
+	var index = rowsDisplayed.indexOf(row);
 	
 	// Do nothing if this is the last row left.
 	if (rowsDisplayed.length == 1)
@@ -90,14 +90,14 @@ function removeRowFunction(row)
 	// If we're removing the last row, we need to move the add button.
 	if (index == rowsDisplayed.length - 1)
 	{
-	    newLastRow = rowsDisplayed[rowsDisplayed.length - 2];
-	    farRightCol = firstChildByClass(newLastRow, 'far-right');
+	    var newLastRow = rowsDisplayed[rowsDisplayed.length - 2];
+	    var farRightCol = firstChildByClass(newLastRow, 'far-right');
 	    
-	    oldAddButton = document.getElementById('add-button');
-	    oldAddParent = oldAddButton.parentElement;
+	    var oldAddButton = document.getElementById('add-button');
+	    var oldAddParent = oldAddButton.parentElement;
 	    oldAddParent.removeChild(oldAddButton);
 
-	    addButton = document.createElement('button');
+	    var addButton = document.createElement('button');
 	    addButton.setAttribute('type', 'button');
 	    addButton.setAttribute('id', 'add-button');
 	    addButton.addEventListener('click', addRow);
@@ -119,7 +119,7 @@ function firstChildByClass(domElement, className)
 {
     for (var i = 0; i < domElement.childNodes.length; i++)
     {
-	childNode = domElement.childNodes[i];
+	var childNode = domElement.childNodes[i];
 	if (childNode.className == className)
 	{
 	    return childNode;
