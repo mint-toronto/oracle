@@ -10,8 +10,9 @@ window.onload = function ()
 
 function addRow()
 {
-    var divList = [ 'row', 'far-left', 'left', 'right', 'far-right' ];
-    var divTable = {};
+    rowName = 'row-' + formFieldCount.toString();
+    divList = [ 'row', 'far-left', 'left', 'right', 'far-right' ];
+    divTable = {};
 
     // Create all divs to add
     for (i = 0; i < divList.length; i++)
@@ -20,6 +21,7 @@ function addRow()
 	divTable[divName] = document.createElement('div');
 	divTable[divName].className = divName;
     }
+    divTable['row'].id = rowName;
 
     // Create form fields to add
     markField = document.createElement('input');
@@ -33,7 +35,6 @@ function addRow()
     // Create remove button
     removeButton = document.createElement('button');
     removeButton.setAttribute('type', 'button');
-    removeButton.setAttribute('id', 'remove-button-' + formFieldCount.toString());
 
     // Create add button
     addButton = document.createElement('button');
@@ -64,6 +65,18 @@ function addRow()
     }
 
     divTable['far-right'].appendChild(addButton);
-    addButton.addEventListener('click', addRow);  
+
+    // Finally, set up click listeners
+    addButton.addEventListener('click', addRow);
+    removeButton.addEventListener('click', removeRowFunction(rowName));
     formFieldCount++;
+}
+
+function removeRowFunction(rowName)
+{
+    return function()
+    {
+	rowToRemove = document.getElementById(rowName);
+	rowToRemove.parentElement.removeChild(rowToRemove);
+    };
 }
