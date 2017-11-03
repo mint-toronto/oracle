@@ -31,88 +31,90 @@ body h1::first-letter
 
 .row
 {
-text-align:center;
+  text-align:center;
   min-width:100px;
   margin: 0 auto;
 }
 
 .far-left
 {
-width:100px;
+  width:100px;
   text-align:center;
-display: inline-block;
-vertical-align:middle;
+  display: inline-block;
+  vertical-align:middle;
 }
 
 .far-left button
 {
   width:100px;
-height:75px;
+  height:75px;
   background:url(../public/images/minus.png) no-repeat;
   border-style:none;
 }
 
 .left
 {
-width:100px;
-font-family: LemonMilklight;
-  font-size: 1.25em;
-  text-align:center;
-  display: inline-block;
-color: #fff;
-vertical-align:middle;
-padding:2px 2px 2px 2px;
-}
-
-.right
-{
-width:100px;
+  width:100px;
   font-family: LemonMilklight;
   font-size: 1.25em;
   text-align:center;
   display: inline-block;
-color: #fff;
-vertical-align:middle;
-padding:2px 2px 2px 2px;
+  color: #fff;
+  vertical-align:middle;
+  padding:2px 2px 2px 2px;
+}
+
+.right
+{
+  width:100px;
+  font-family: LemonMilklight;
+  font-size: 1.25em;
+  text-align:center;
+  display: inline-block;
+  color: #fff;
+  vertical-align:middle;
+  padding:2px 2px 2px 2px;
 }
 
 .far-right
 {
-width:100px;
+  width:100px;
   text-align:center;
-display: inline-block;
-vertical-align:middle;
+  display: inline-block;
+  vertical-align:middle;
 }
 
 .far-right button
 {
-width:100px;
+  width:100px;
   height:75px;
   background:url(../public/images/plus.png) no-repeat;
-border-style:none;
+  border-style:none;
 }
 
 .mark-box
 {
-width:100px;
-height:75px;
-font-family: LemonMilklight;
-font-size:1.75em;
-color:#4D5A5A;
+  width:100px;
+  height:75px;
+  font-family: LemonMilklight;
+  font-size:1.75em;
+  color:#4D5A5A;
 }
 
 #submit-button
 {
-    min-width: 250px;
-    min-height: 100px;
-    padding: 13px;
+  min-width: 250px;
+  min-height: 100px;
+  padding: 13px;
   background:url(../public/images/predict.png) no-repeat;
-border-style:none;
+  border-style:none;
 }
 
 </style>
   <title>Oracle Mark</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script type="text/javascript" src="../public/js/marks.js" async></script>
+  <script type="text/javascript" src="../public/js/graph.js" async></script>
 </head>
 <body>
 <h1><span class="big-o">O</span>racle</h1>
