@@ -1,28 +1,63 @@
 // HOOK UP ADD/REMOVE BUTTONS
 
-document.querySelector('#add-tt').addEventListener('click', addTT);
-document.querySelector('#add-qa').addEventListener('click', addQA);
+document.getElementById('add-button').addEventListener('click', addRow);
 
-var ttInputGroup = document.getElementById('tts-inputs');
-var qaInputGroup = document.getElementById('qas-inputs');
+var formFieldCount = 1;
+var mainSection = document.getElementById('main-section');
 
-function addTT()
+window.onload = function ()
 {
-    var br = document.createElement('br');
-    
-    var label = document.createElement('label');
-    label.textContent = "Term Test: "
-    
-    var input = document.createElement('input');
-    input.setAttribute('type', 'number');
-    input.setAttribute('min', '0');
-    input.setAttribute('max', '100');
-    input.setAttribute('step', '0.5');
-    input.setAttribute('value', '100.0');
+    addRow();
+};
 
-    label.appendChild(input);
-    ttInputGroup.appendChild(br);
-    ttInputGroup.appendChild(label);
+function addRow()
+{
+    var divList = [ 'row', 'far-left', 'left', 'right', 'far-right' ];
+    var divTable = {};
+
+    // Create all divs to add
+    for (i = 0; i < divList.length; i++)
+    {
+	divName = divList[i];
+	divTable[divName] = document.createElement('div');
+	divTable[divName].className = divName;
+    }
+
+    // Create form fields to add
+    markField = document.createElement('input');
+    markField.setAttribute('type', 'text');
+    markField.className = 'mark-box';
+
+    weightField = document.createElement('input');
+    weightField.setAttribute('type', 'text');
+    weightField.className = 'mark-box';
+
+    // Create remove button
+    removeButton = document.createElement('button');
+    removeButton.setAttribute('type', 'button');
+    removeButton.setAttribute('id', 'remove-button-' + formFieldCount.toString());
+
+    // Create the DOM sub-tree we're going to add. First the main row elements.
+    for (var key in divTable)
+    {
+	if (divTable.hasOwnProperty(key) && key != 'row')
+	{
+	    divTable['row'].appendChild(divTable[key]);
+	}
+    }
+
+    // Now the fields and buttons
+    divTable['far-left'].appendChild(removeButton);
+    divTable['left'].appendChild(markField);
+    divTable['right'].appendChild(weightField);
+
+    document.getElementById('marks-form').appendChild(divTable['row']);
+
+    // Remove old add button
+    addButton = document.getElementById('add-button');
+    addButton.parentElement.removeChild(addButton);
+    
+    formFieldCount++;
 }
 
 function addQA()
@@ -47,7 +82,7 @@ function addQA()
 
 // FORM SUBMISSON
 
-document.querySelector('#submit-button').addEventListener('click', doSubmit);
+//document.querySelector('#submit-button').addEventListener('click', doSubmit);
 
 function doSubmit()
 {
@@ -73,5 +108,5 @@ function getFormData()
 	}
     }
     
-    return params.substring(0, params.length - 1);;
+    return params.substring(0, params.length - 1);
 }

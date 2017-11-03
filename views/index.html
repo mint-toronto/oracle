@@ -31,56 +31,62 @@ body h1::first-letter
 
 .row
 {
-  text-align:center;
+text-align:center;
   min-width:100px;
   margin: 0 auto;
 }
 
 .far-left
 {
-  width:100px;
+width:100px;
   text-align:center;
-  display: inline-flex;
+display: inline-block;
+vertical-align:middle;
 }
 
 .far-left button
 {
   width:100px;
-  height:75px;
+height:75px;
   background:url(../public/images/minus.png) no-repeat;
   border-style:none;
 }
 
 .left
 {
-  width:100px;
-  font-family: LemonMilklight;
+width:100px;
+font-family: LemonMilklight;
   font-size: 1.25em;
   text-align:center;
   display: inline-block;
-  color: #fff;
+color: #fff;
+vertical-align:middle;
+padding:2px 2px 2px 2px;
 }
 
 .right
 {
-  width:100px;
+width:100px;
   font-family: LemonMilklight;
   font-size: 1.25em;
   text-align:center;
   display: inline-block;
-  color: #fff;
+color: #fff;
+vertical-align:middle;
+padding:2px 2px 2px 2px;
 }
 
 .far-right
 {
-  width:100px;
+width:100px;
   text-align:center;
-  display: inline-block;
+display: inline-block;
+vertical-align:middle;
 }
 
 .far-right button
 {
-  width:100px;
+width:100px;
   height:75px;
   background:url(../public/images/plus.png) no-repeat;
 border-style:none;
@@ -91,7 +97,7 @@ border-style:none;
 width:100px;
 height:75px;
 font-family: LemonMilklight;
-font-size:1.8em;
+font-size:1.75em;
 color:#4D5A5A;
 }
 
@@ -103,7 +109,7 @@ color:#4D5A5A;
 <body>
 <h1><span class="big-o">O</span>racle</h1>
 
-<section>
+<section id="main-section">
   <div class="row">
     <div class="far-left">
     </div>
@@ -116,21 +122,21 @@ color:#4D5A5A;
     <div class="far-right">
     </div>
   </div>
-    <form>
-    <div class="row">
-      <div class="far-left">
-	<button></button>
+    <form id="marks-form">
+      <div class="row">
+	<div class="far-left">
+	  <button></button>
+	</div>
+	<div class="left">
+	  <input class="mark-box" type="text">
+	</div>
+	<div class="right">
+	  <input class="mark-box" type="text">
+	</div>
+	<div class="far-right">
+	  <button type="button" id="add-button"></button>
+	</div>
       </div>
-      <div class="left">
-	<input class="mark-box" type="text">
-      </div>
-      <div class="right">
-	<input class="mark-box" type="text">
-      </div>
-      <div class="far-right">
-	<button></button>
-      </div>
-    </div>
     </form>
 </section>
   
