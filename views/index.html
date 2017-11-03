@@ -8,30 +8,32 @@
   font-weight:400;
 }
 
-body
+html
 {
   background-color: #3BCCC7;
+  height: 100%;
+  overflow: hidden;
 }
 
 body h1
 {
-font-family: LemonMilklight;
-color: #BBEDEB;
-letter-spacing:0.25em;
-padding: 2% 0% 0% 3%;
+  font-family: LemonMilklight;
+  color: #BBEDEB;
+  letter-spacing:0.25em;
+  padding: 2% 0% 0% 3%;
 }
 
 body h1::first-letter
 {
-font-family: LemonMilklight;
-font-size: 2em;
+  font-family: LemonMilklight;
+  font-size: 2em;
 }
 
 .row
 {
-text-align:center;
-min-width:100px;
-margin: 0 auto;
+  text-align:center;
+  min-width:100px;
+  margin: 0 auto;
 }
 
 .far-left
@@ -39,15 +41,14 @@ margin: 0 auto;
   width:100px;
   text-align:center;
   display: inline-flex;
-  *display: inline;
 }
 
 .far-left button
 {
   width:100px;
   height:75px;
-background:url(../public/images/minus.png) no-repeat;
-border-style:none;
+  background:url(../public/images/minus.png) no-repeat;
+  border-style:none;
 }
 
 .left
@@ -56,8 +57,7 @@ border-style:none;
   font-family: LemonMilklight;
   font-size: 1.25em;
   text-align:center;
-  display: inline-flex;
-  *display: inline;
+  display: inline-block;
   color: #fff;
 }
 
@@ -67,8 +67,7 @@ border-style:none;
   font-family: LemonMilklight;
   font-size: 1.25em;
   text-align:center;
-  display: inline-flex;
-  *display: inline;
+  display: inline-block;
   color: #fff;
 }
 
@@ -76,14 +75,27 @@ border-style:none;
 {
   width:100px;
   text-align:center;
-  display: inline-flex;
-  *display: inline;
-
+  display: inline-block;
 }
 
-.col-far-left
+.far-right button
 {
+  width:100px;
+  height:75px;
+  background:url(../public/images/plus.png) no-repeat;
+border-style:none;
 }
+
+.mark-box
+{
+width:100px;
+height:75px;
+font-family: LemonMilklight;
+font-size:1.8em;
+color:#4D5A5A;
+}
+
+
 </style>
   <title>Oracle Mark</title>
   <script type="text/javascript" src="../public/js/marks.js" async></script>
@@ -104,22 +116,22 @@ border-style:none;
     <div class="far-right">
     </div>
   </div>
-  <div class="row">
-    <div class="far-left">
-      <button>
-      </button>
+    <form>
+    <div class="row">
+      <div class="far-left">
+	<button></button>
+      </div>
+      <div class="left">
+	<input class="mark-box" type="text">
+      </div>
+      <div class="right">
+	<input class="mark-box" type="text">
+      </div>
+      <div class="far-right">
+	<button></button>
+      </div>
     </div>
-    <div class="left">
-      [  ]
-    </div>
-    <div class="right">
-      [  ]
-    </div>
-    <div class="far-right">
-      +
-    </div>
-  </div>
-  <div class="row">
+    </form>
 </section>
   
 </body>
