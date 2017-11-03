@@ -61,7 +61,8 @@ function addRow()
     if (formFieldCount != 1)
     {
 	oldAddButton = document.getElementById('add-button');
-	oldAddButton.parentElement.removeChild(oldAddButton);
+	oldAddParent = oldAddButton.parentElement;
+	oldAddParent.removeChild(oldAddButton);
     }
 
     divTable['far-right'].appendChild(addButton);
