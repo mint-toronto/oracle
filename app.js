@@ -28,7 +28,8 @@ app.use(router.allowedMethods());
 
 // SERVE STATIC FILES
 
-app.use(serve('./'));
+console.log(__dirname + '/public');
+app.use(serve(__dirname + '/public'));
 
 // CONTROLLER
 
