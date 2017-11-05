@@ -1,0 +1,35 @@
+{
+  "name": "mark-oracle",
+  "version": "1.0.0",
+  "description": "Oracle is a machine-learning based webapp for predicting UofT student grades. Models were trained on years of past data, enter your marks-to-date to see how you'll do.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "co-views": "^1.0.0",
+    "koa": "^0.12.2",
+    "koa-logger": "^1.2.2",
+    "koa-router": "^3.4.0",
+    "koa-static": "^1.4.7"
+  },
+  "engines" : {
+    "node" : "0.11.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notlab/oracle.git"
+  },
+  "keywords": [
+    "uoft",
+    "machine-learning",
+    "ai",
+    "prediction"
+  ],
+  "author": "Andrew Ross, Gideon Providence",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notlab/oracle/issues"
+  },
+  "homepage": "https://github.com/notlab/oracle#readme"
+}
