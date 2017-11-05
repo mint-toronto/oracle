@@ -39,5 +39,6 @@ async function index(ctx)
 
 // LISTEN
 
-app.listen(8888);
+var port = process.env.PORT || 8888;
+app.listen(port);
 
