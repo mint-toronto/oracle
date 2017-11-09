@@ -1,0 +1,126 @@
+@font-face
+{
+  font-family: LemonMilklight;
+  src: url(../fonts/LemonMilklight.otf);
+  font-weight:400;
+}
+
+html
+{
+  background-color: #3BCCC7;
+  height: 100%;
+  overflow: auto;
+}
+
+body h1
+{
+  font-family: LemonMilklight;
+  color: #BBEDEB;
+  letter-spacing:0.25em;
+  padding: 2% 0% 0% 3%;
+}
+
+body h1::first-letter
+{
+  font-family: LemonMilklight;
+  font-size: 2em;
+}
+
+.row
+{
+  text-align:center;
+  min-width:100px;
+  margin: 0 auto;
+}
+
+.far-left
+{
+  width:100px;
+  text-align:center;
+  display: inline-block;
+  vertical-align:middle;
+}
+
+.far-left button
+{
+  width:100px;
+  height:75px;
+  background:url(../images/minus.png) no-repeat;
+  border-style:none;
+}
+
+.left
+{
+  width:100px;
+  font-family: LemonMilklight;
+  font-size: 1.25em;
+  text-align:center;
+  display: inline-block;
+  color: #fff;
+  vertical-align:middle;
+  padding:2px 2px 2px 2px;
+}
+
+.right
+{
+  width:100px;
+  font-family: LemonMilklight;
+  font-size: 1.25em;
+  text-align:center;
+  display: inline-block;
+  color: #fff;
+  vertical-align:middle;
+  padding:2px 2px 2px 2px;
+}
+
+.far-right
+{
+  width:100px;
+  text-align:center;
+  display: inline-block;
+  vertical-align:middle;
+}
+
+.far-right button
+{
+  width:100px;
+  height:75px;
+  background:url(../images/plus.png) no-repeat;
+  border-style:none;
+}
+
+.mark-box
+{
+  width:100px;
+  height:75px;
+  font-family: LemonMilklight;
+  font-size:1.75em;
+  color:#4D5A5A;
+}
+
+#submit-button
+{
+  min-width: 250px;
+  min-height: 100px;
+  padding: 13px;
+  background:url(../images/predict.png) no-repeat;
+  border-style:none;
+}
+
+
+/*.chart rect {
+  fill: steelblue;
+}
+.chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}*/
+.bar rect {
+  fill: steelblue;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
