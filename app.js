@@ -1,9 +1,7 @@
 'use strict';
 
-const render = require('./lib/render');
-const router = require('koa-router')();
 const logger = require('koa-logger');
-const serve  = require('koa-static');
+const serve  = require('koa-static-server')
 const path   = require('path');
 
 const Koa = require('koa');
@@ -15,31 +13,20 @@ const app = module.exports = new Koa();
 app.use(logger());
 
 
-// VIEWS
-
-app.use(render)
-
-// ROUTING
-
-router.get('/', index);
-
-app.use(router.routes());
-app.use(router.allowedMethods());
-
 // SERVE STATIC FILES
 
-console.log(__dirname + '/public');
-app.use(serve(__dirname + '/public'));
+app.use(serve({rootDir: 'public', rootPath: 'public'}));
+app.use(serve({rootDir: '/', rootPath: 'views'}));
 
 // CONTROLLER
 
-async function index(ctx)
-{
-    await ctx.render('index');
-}
+//async function index(ctx)
+//{
+//    await ctx.render('index');
+//}
 
 // LISTEN
 
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 3000;
 app.listen(port);
 
