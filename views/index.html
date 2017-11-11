@@ -1,146 +1,45 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<style media="screen" type="text/css">
-@font-face
-{
-  font-family: LemonMilklight;
-  src: url(../fonts/LemonMilklight.otf);
-  font-weight:400;
-}
-
-html
-{
-  background-color: #3BCCC7;
-  height: 100%;
-  overflow: auto;
-}
-
-body h1
-{
-  font-family: LemonMilklight;
-  color: #BBEDEB;
-  letter-spacing:0.25em;
-  padding: 2% 0% 0% 3%;
-}
-
-body h1::first-letter
-{
-  font-family: LemonMilklight;
-  font-size: 2em;
-}
-
-.row
-{
-text-align:center;
-  min-width:100px;
-  margin: 0 auto;
-}
-
-.far-left
-{
-width:100px;
-  text-align:center;
-display: inline-block;
-vertical-align:middle;
-}
-
-.far-left button
-{
-  width:100px;
-height:75px;
-  background:url(../images/minus.png) no-repeat;
-  border-style:none;
-}
-
-.left
-{
-width:100px;
-font-family: LemonMilklight;
-  font-size: 1.25em;
-  text-align:center;
-  display: inline-block;
-color: #fff;
-vertical-align:middle;
-padding:2px 2px 2px 2px;
-}
-
-.right
-{
-width:100px;
-  font-family: LemonMilklight;
-  font-size: 1.25em;
-  text-align:center;
-  display: inline-block;
-color: #fff;
-vertical-align:middle;
-padding:2px 2px 2px 2px;
-}
-
-.far-right
-{
-width:100px;
-  text-align:center;
-display: inline-block;
-vertical-align:middle;
-}
-
-.far-right button
-{
-width:100px;
-  height:75px;
-  background:url(../images/plus.png) no-repeat;
-border-style:none;
-}
-
-.mark-box
-{
-width:100px;
-height:75px;
-font-family: LemonMilklight;
-font-size:1.75em;
-color:#4D5A5A;
-}
-
-#submit-button
-{
-    min-width: 250px;
-    min-height: 100px;
-    padding: 13px;
-  background:url(../images/predict.png) no-repeat;
-border-style:none;
-}
-
-</style>
   <title>Oracle Mark</title>
-  <script type="text/javascript" src="../js/marks.js" async></script>
-</head>
-<body>
-<h1><span class="big-o">O</span>racle</h1>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 
-<section id="main-section">
-  <div class="row">
-    <div class="far-left">
+  <link rel="stylesheet" href="../public/styles/styles.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <script type="text/javascript" src="../public/js/marks.js" async></script>
+  <script type="text/javascript" src="../public/js/graph.js" async></script>
+</head>
+
+<body>
+  <h1><span class="big-o">O</span>racle</h1>
+
+  <section id="main-section">
+    <div class="row">
+      <div class="far-left">
+      </div>
+      <div class="left">
+        Mark
+      </div>
+      <div class="right">
+        Weight
+      </div>
+      <div class="far-right">
+      </div>
     </div>
-    <div class="left">
-      Mark
+    <form id="marks-form">
+    </form>
+    <div class="row">
+      <div class="far-left"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="far-right">
+        <button id="submit-button" type="submit"></button>
+      </div>
     </div>
-    <div class="right">
-      Weight
-    </div>
-    <div class="far-right">
-    </div>
-  </div>
-  <form id="marks-form">
-  </form>
-  <div class="row">
-    <div class="far-left"></div>
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="far-right">
-      <button id="submit-button" type="submit"></button>
-    </div>
-  </div>
-</section>
+  </section>
+  <div id="bar-chart">
   
 </body>
 </html>
