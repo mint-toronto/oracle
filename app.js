@@ -15,8 +15,8 @@ app.use(logger());
 
 // SERVE STATIC FILES
 
-app.use(serve({rootDir: 'public', rootPath: 'public'}));
-app.use(serve({rootDir: '/', rootPath: 'views'}));
+app.use(serve({rootDir: 'public', rootPath: '/public'}));
+app.use(serve({rootDir: 'views'}));
 
 // CONTROLLER
 
