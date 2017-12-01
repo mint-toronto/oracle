@@ -8,6 +8,11 @@
   src: url(public/fonts/LemonMilklight.otf);
   font-weight:400;
 }
+@font-face
+{
+  font-family: Biko_Regular;
+  src: url(public/fonts/Biko_Regular.otf);
+}
 
 html
 {
@@ -16,7 +21,7 @@ html
   overflow: auto;
 }
 
-body h1
+h1
 {
   font-family: LemonMilklight;
   color: #BBEDEB;
@@ -24,7 +29,7 @@ body h1
   padding: 1em 0% 0% 1em;
 }
 
-body h1::first-letter
+h1::first-letter
 {
   font-family: LemonMilklight;
   color: #BBEDEB;
@@ -38,6 +43,37 @@ body h1::first-letter
   color: #BBEDEB;
   min-width:100px;
   margin: 0 auto;
+}
+
+.row h1
+{
+  color: #FFF;
+  padding-left: 0;
+}
+
+.row h1::first-letter
+{
+  font-size: 1em;
+  color: #FFF;
+}
+
+.row h1 span
+{
+  font-size: 2em;
+}
+
+.row p {
+  padding: 1em 8em 0 8em;
+  font-family: Biko_Regular;
+  line-height: 1.7; 
+  font-size: x-large;
+  color: #FFF;
+}
+
+@media screen and (max-width: 768px) {
+    .row p {
+        padding: 1em 1em 0 1em;
+    }
 }
 
 .far-left
@@ -127,14 +163,19 @@ border-style:none;
 </head>
 
 <body>
-  <h1><span class="big-o">O</span>racle</h1>
+  <h1 style="padding: 1em 0 0 1em; margin: 0;"><span class="big-o">O</span>racle</h1>
 
   <section id="main-section">
     <div class="row">
-      <h1>Coming Soon ...</h1>
+      <p>
+        Welcome to Mark Oracle! 
+      </p>
+      <p>
+        This is a data-driven web app; you tell us how you're doing so far in your course and we predict your final mark using models trained on historical data from your institution.
+      </p> 
     </div>
-    <div class="row" style="padding: 1em 4em;">
-      Welcome Mark Oracle! This is data-driven web app. You tell us how you're doing so far in your course and we predict your final mark, using models trained on historical data from your institution. 
+    <div class="row">
+      <h1 style="padding-top: 3em;"><span style="color: #FFF;">C</span>oming <span>S</span>oon ...</h1>
     </div>
   </section>
 
